@@ -28,8 +28,14 @@ To run the app locally you need:
 
 [node-js]: https://nodejs.org/en/
 [npm-install]: https://docs.npmjs.com/getting-started/installing-node#updating-npm
+[docker install guide]: https://docs.docker.com/docker-for-windows/install/
 
-### Using Dockerised version
+## How to set up Dockerised version
 
-1. Navigate to app's main workspace folder.
-2. Run `docker-compose up -d --build`
+1. Install Docker Windows version - [docker install guide]. Ommit this step if already installed.
+2. Navigate to app's main workspace folder.
+3. Run `docker-compose up -d --build`
+
+## User Guide
+
+Please read the short description on how to use the basic features of the generator: 
