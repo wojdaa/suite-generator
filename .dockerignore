@@ -1,0 +1,14 @@
+.git
+Dockerfile
+docker-compose.yml
+.env
+*.md
+
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+/coverage
+/node_modules
