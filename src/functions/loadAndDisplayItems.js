@@ -8,7 +8,7 @@ const loadListOfItems = (array, searchString) => {
       if(typeof searchString === "undefined") {
         searchString = "";
       }
-       if(item.type.toLowerCase().search(searchString.toLowerCase()) !== -1) {
+       if(item.visibility !== false && item.type.toLowerCase().search(searchString.toLowerCase()) !== -1) {
         return (
           <FeatureItem itemKey={item.type.trim()} group={item.group} key={item.type.trim()} value={item.type} id={featureID} feature={item}/>
         )

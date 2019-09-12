@@ -1,6 +1,7 @@
 const listOfDataFilters =
     [
       {
+        visibility: false,
         type: 'Accessibility',
         tag: "accessibility-filter",
         parameters: {
@@ -58,6 +59,7 @@ const listOfDataFilters =
         wiki: "https://github.com/Cognifide/aet/wiki/AccessibilityDataFilter",
       },
       {
+        visibility: false,
         type: 'Extract Element',
         tag: "extract-element",
         parameters: {
@@ -88,6 +90,7 @@ const listOfDataFilters =
         wiki: "https://github.com/Cognifide/aet/wiki/ExtractElementDataFilter",
       },
       {
+        visibility: false,
         type: 'JSErrors',
         tag: "js-errors-filter",
         parameters: {
@@ -145,6 +148,7 @@ const listOfDataFilters =
         wiki: "https://github.com/Cognifide/aet/wiki/JSErrorsDataFilter",
       },
       {
+        visibility: false,
         type: 'Remove Lines',
         tag: "remove-lines",
         parameters: {
@@ -175,6 +179,7 @@ const listOfDataFilters =
         wiki: "https://github.com/Cognifide/aet/wiki/RemoveLinesDataFilter",
       },
       {
+        visibility: false,
         type: 'Remove Nodes',
         tag: "remove-nodes",
         parameters: {
@@ -195,6 +200,7 @@ const listOfDataFilters =
         wiki: "https://github.com/Cognifide/aet/wiki/RemoveNodesDataFilter",
       },
       {
+        visibility: false,
         type: 'Remove Regex',
         tag: "remove-regexp",
         parameters: {
@@ -234,6 +240,7 @@ const listOfDataFilters =
         wiki: "https://github.com/Cognifide/aet/wiki/RemoveRegexDataFilter",
       },
       {
+        visibility: false,
         type: 'Exclude',
         tag: "exclude",
         parameters: {
@@ -264,6 +271,7 @@ const listOfDataFilters =
         wiki: "https://github.com/Cognifide/aet/wiki/StatusCodesDataFilters",
       },
       {
+        visibility: false,
         type: 'Include',
         tag: "include",
         parameters: {
@@ -294,6 +302,7 @@ const listOfDataFilters =
         wiki: "https://github.com/Cognifide/aet/wiki/StatusCodesDataFilters",
       },
       {
+        visibility: false,
         type: 'W3CHTML5 Issues',
         tag: "w3c-filter",
         parameters: {
