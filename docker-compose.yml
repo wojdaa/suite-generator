@@ -6,3 +6,4 @@ services:
     build: .
     container_name: suitegen
     ports: ["3000:3000"]
+    environment: ["ENDPOINT"]
