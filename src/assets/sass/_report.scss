@@ -20,4 +20,8 @@
     &.fatal {
         background-color: $blockError;
     }
+
+    &.placeholder {
+        background-color: $blockDefault;
+    }
 }
