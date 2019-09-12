@@ -1,0 +1,23 @@
+.report-message {
+    display: block;
+    padding: 5px;
+    width: 97%;
+    margin: 10px 10px;
+    border-radius: 3px;
+
+    &.progress {
+        background-color: $blockModifier;
+    }
+
+    &.error {
+        background-color: $blockWarning;
+    }
+
+    &.finished {
+        background-color: $blockValid;
+    }
+
+    &.fatal {
+        background-color: $blockError;
+    }
+}
