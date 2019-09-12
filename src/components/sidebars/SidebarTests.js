@@ -8,6 +8,7 @@ import SuiteActionButton from "../../containers/buttons/SuiteActionButton";
 import Modal from "../overlay/Modal";
 import StatusUpdate from "../../containers/reports/StatusUpdate";
 import LinkButton from "../../containers/buttons/LinkButton";
+import axios from 'axios';
 
 class SidebarTests extends Component {
 
@@ -19,54 +20,41 @@ class SidebarTests extends Component {
       aetFinished: false,
       aetSuccess: false,
       reportUrl: null
-    }
+    };
 
     this.runSuiteOnAet = this.runSuiteOnAet.bind(this);
     this.hideAetModal = this.hideAetModal.bind(this);
   }
 
-  // hardcoded data
-  componentDidMount() {
-    const array = [
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:11	[Failed to wait for image to be loaded with provided locator. Error: Expected condition failed: waiting for visibility of element located by By.cssSelector: img.shoppable-item-product-image (tried for 3 second(s) with 500 MILLISECONDS interval)", status: "error"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:11	[Failed to wait for image to be loaded with provided locator. Error: Expected condition failed: waiting for visibility of element located by By.cssSelector: img.shoppable-item-product-image (tried for 3 second(s) with 500 MILLISECONDS interval)", status: "error"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:42:12	[14:42:10.573]: COMPARED: [success: 144, total: 144] ::: COLLECTED: [success: 50, total: 60]", status: "progress"},
-      {message: "11-Sep-2019 14:43:16	Suite processing finished", status: "finished"},
-    ]
-    let i = 0;
-    const nnn = () => {
-      this.addNewStatus(array[i]);
-      i ++;
-      if (i < array.length) setTimeout(nnn, 1000);
-    }
-
-    setTimeout(nnn, 1000);
-  }
-
   runSuiteOnAet(file) {
     this.startAet();
+    const data = new FormData();
+    data.append("suite", file);
+    data.append("name", file.name);
+    axios.post('http://35.157.217.31/suite', data)
+    .then(response => {
+      this.setReportUrl(response.data.htmlReportUrl);
+      const interval = setInterval(() => {
+        axios.get('http://35.157.217.31' + response.data.statusUrl)
+        .then(response => {
+          const status = response.data.status;
+          if (status === "FINISHED" || status === "FATAL") {
+            clearInterval(interval);
+          }
+          if (status !== "UNKNOWN") {
+            this.addNewStatus(response.data);
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+      }, 1000);
+
+    })
+    .catch(function (e) {
+      console.log(e);
+      alert("Error");
+    });
   }
 
   startAet() {
@@ -86,6 +74,7 @@ class SidebarTests extends Component {
   }
 
   setReportUrl(url) {
+    console.log(url);
     this.setState({
       reportUrl: url
     });
@@ -93,14 +82,14 @@ class SidebarTests extends Component {
 
   addNewStatus(update) {
     this.state.statuses.push(update);
-    
-    if (update.status === "finished") {
+
+    if (update.status === "FINISHED") {
       this.setState({
         statuses: this.state.statuses,
         aetFinished: true,
         aetSuccess: true
       });
-    } else if (update.status === "fatal") {
+    } else if (update.status === "FATAL") {
       this.setState({
         statuses: this.state.statuses,
         aetFinished: true
@@ -117,15 +106,15 @@ class SidebarTests extends Component {
       <div className="sidebar-tests">
         <SearchTests />
         <TestsList />
-        <SuiteActionButton label="RUN SUITE, RUN!" handleFile={this.runSuiteOnAet} />
+        <SuiteActionButton label="RUN SUITE" handleFile={this.runSuiteOnAet} />
         <SuiteActionButton label="DOWNLOAD SUITE" handleFile={saveAs}/>
         <LoadSuiteButton />
 
-        {this.state.aetRunning && 
+        {this.state.aetRunning &&
           <Modal>
             <ScrollToBottom className="scroll">
               {this.state.statuses.map(update => <StatusUpdate message={update.message} status={update.status} /> )}
-              <div class="overlay-btn-container">
+              <div className="overlay-btn-container">
                 {this.state.aetSuccess && <LinkButton className="modal-btn" url={this.state.reportUrl} label="Show report"></LinkButton>}
                 {this.state.aetFinished && <button className="modal-btn" onClick={this.hideAetModal}>Close</button>}
               </div>
