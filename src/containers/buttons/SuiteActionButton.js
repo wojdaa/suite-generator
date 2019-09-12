@@ -11,7 +11,8 @@ class SuiteActionButton extends Component {
     const invalidParams = this.validateParams(projectTests);
    if(invalidParams.length === 0 ) {
       const suiteElement = xmlbuilder.create('suite', {encoding: "utf-8"});
-      suiteElement.att('name', this.props.project[0].suite)
+      const suiteName = this.props.project[0].suite;
+      suiteElement.att('name', suiteName)
         .att('company', this.props.project[0].company)
         .att('domain', this.props.project[0].domain)
         .att('project', this.props.project[0].project);
@@ -30,7 +31,7 @@ class SuiteActionButton extends Component {
         });
       }
       const xml = suiteElement.end({pretty: true});
-      var file = new File([xml], "suite.xml", {type: "application/xml;charset=utf-8"});
+      var file = new File([xml], suiteName, {type: "application/xml;charset=utf-8"});
       this.props.handleFile(file);
     } else {
       Object.values(invalidParams).forEach((test, index) => {
