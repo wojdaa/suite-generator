@@ -28,3 +28,8 @@ To run the app locally you need:
 
 [node-js]: https://nodejs.org/en/
 [npm-install]: https://docs.npmjs.com/getting-started/installing-node#updating-npm
+
+### Using Dockerised version
+
+1. Navigate to app's main workspace folder.
+2. Run `docker-compose up -d --build`
