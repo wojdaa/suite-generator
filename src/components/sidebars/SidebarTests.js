@@ -19,7 +19,8 @@ class SidebarTests extends Component {
       aetRunning: false,
       aetFinished: false,
       aetSuccess: false,
-      reportUrl: null
+      reportUrl: null,
+      errorCaught: false
     };
 
     this.runSuiteOnAet = this.runSuiteOnAet.bind(this);
@@ -45,15 +46,22 @@ class SidebarTests extends Component {
             this.addNewStatus(response.data);
           }
         })
-        .catch(function (error) {
+        .catch(error => {
           console.log(error);
+          this.setState({
+            errorCaught: true,
+            aetFinished: true
+          });
         })
       }, 1000);
 
     })
-    .catch(function (e) {
+    .catch(e => {
       console.log(e);
-      alert("Error");
+      this.setState({
+        errorCaught: true,
+        aetFinished: true
+      });
     });
   }
 
@@ -113,7 +121,15 @@ class SidebarTests extends Component {
         {this.state.aetRunning &&
           <Modal>
             <ScrollToBottom className="scroll">
-              {this.state.statuses.map(update => <StatusUpdate message={update.message} status={update.status} /> )}
+              {this.state.errorCaught 
+                ? <StatusUpdate message="Something went wrong. Perhabs AET's are running, try again later." status="fatal" />
+                : 
+                <React.Fragment>
+                  {this.state.statuses.map((update, i) => <StatusUpdate key={i} message={update.message} status={update.status} /> )}
+                  {!this.state.aetFinished && <StatusUpdate message="Processing..." status="placeholder" />}
+                </React.Fragment>
+              }
+             
               <div className="overlay-btn-container">
                 {this.state.aetSuccess && <LinkButton className="modal-btn" url={this.state.reportUrl} label="Show report"></LinkButton>}
                 {this.state.aetFinished && <button className="modal-btn" onClick={this.hideAetModal}>Close</button>}
