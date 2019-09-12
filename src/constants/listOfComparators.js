@@ -1,6 +1,7 @@
 const listOfComparators =
 [
   {
+    visibility: false,
     type: 'Accessibility',
     tag: "accessibility",
     parameters: {
@@ -40,6 +41,7 @@ const listOfComparators =
     wiki: "https://github.com/Cognifide/aet/wiki/AccessibilityComparator",
   },
   {
+    visibility: false,
     type: 'Client Side Performance',
     tag: "client-side-performance",
     parameters: null,
@@ -51,6 +53,7 @@ const listOfComparators =
     wiki: "https://github.com/Cognifide/aet/wiki/ClientSidePerformanceComparator",
   },
   {
+    visibility: false,
     type: 'Cookie',
     tag: "cookie",
     parameters: {
@@ -99,6 +102,7 @@ const listOfComparators =
     wiki: "https://github.com/Cognifide/aet/wiki/CookieComparator",
   },
   {
+    visibility: false,
     type: 'JSErrors',
     tag: "js-errors",
     parameters: null,
@@ -149,6 +153,7 @@ const listOfComparators =
     wiki: "https://github.com/Cognifide/aet/wiki/LayoutComparator",
   },
   {
+    visibility: false,
     type: 'Source',
     tag: "source",
     parameters: {
@@ -177,6 +182,7 @@ const listOfComparators =
     wiki: "https://github.com/Cognifide/aet/wiki/SourceComparator",
   },
   {
+    visibility: false,
     type: 'StatusCodes',
     tag: "status-codes",
     parameters: {
@@ -215,6 +221,7 @@ const listOfComparators =
     wiki: "https://github.com/Cognifide/aet/wiki/StatusCodesComparator",
   },
   {
+    visibility: false,
     type: 'Source W3CHTML5',
     tag: "source",
     parameters: {

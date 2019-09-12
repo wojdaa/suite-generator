@@ -11,6 +11,7 @@ const listOfCollectors =
     proxy: "false",
   },
   {
+    visibility: false,
     type: 'Accessibility',
     tag: "accessibility",
     parameters: {
@@ -32,6 +33,7 @@ const listOfCollectors =
     wiki: "https://github.com/Cognifide/aet/wiki/AccessibilityCollector",
   },
   {
+    visibility: false,
     type: 'Client Side Performance',
     tag: "client-side-performance",
     parameters: null,
@@ -43,6 +45,7 @@ const listOfCollectors =
     wiki: "https://github.com/Cognifide/aet/wiki/ClientSidePerformanceComparator",
   },
   {
+    visibility: false,
     type: 'Cookie',
     tag: "cookie",
     parameters: null,
@@ -54,6 +57,7 @@ const listOfCollectors =
     wiki: "https://github.com/Cognifide/aet/wiki/CookieCollector",
   },
   {
+    visibility: false,
     type: 'JS Errors',
     tag: "js-errors",
     parameters: null,
@@ -122,6 +126,7 @@ const listOfCollectors =
     wiki: "https://github.com/Cognifide/aet/wiki/ScreenCollector",
   },
   {
+    visibility: false,
     type: 'Source',
     tag: "source",
     parameters: null,
@@ -133,6 +138,7 @@ const listOfCollectors =
     wiki: "https://github.com/Cognifide/aet/wiki/SourceCollector",
   },
   {
+    visibility: false,
     type: 'Status Codes',
     tag: "status-codes",
     parameters: null,
