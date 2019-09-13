@@ -7,7 +7,7 @@ export const CreateFeatureList = () => {
     <FeaturesList type="collectors"/>
     <FeaturesList type="comparators"/>
     <FeaturesList type="modifiers"/>
-    <FeaturesList type="data-filters"/>
+    {/*<FeaturesList type="data-filters"/>*/}
   </div>
   )
 }
