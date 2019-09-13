@@ -30,7 +30,7 @@ To run the app locally you need:
 [npm-install]: https://docs.npmjs.com/getting-started/installing-node#updating-npm
 [docker install guide]: https://docs.docker.com/docker-for-windows/install/
 
-## How to set up Dockerised version
+## How to set up Dockerised version (WIP)
 
 1. Install Docker Windows version - [docker install guide]. Ommit this step if already installed.
 2. Navigate to app's main workspace folder.
