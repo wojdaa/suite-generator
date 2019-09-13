@@ -51,15 +51,17 @@ Please read the short description on how to use the basic features of the genera
 ### Test suite setup.
 1. After the tool is successfully built (using Docker), in order to use it, open localhost:3000 in web browser.
 2. On first run of the Suite Generator tool, user is asked to fill out the test suite information:
-![alt text](https://github.com/wojdaa/suite-generator/tree/master/assets/Test-suite-setup.png "Test Suite Wizard")
+![alt text](/assets/Test-suite-setup.png "Test Suite Wizard")
 3. Hit SUBMIT button.
 4. The page is built around 3 sections:
 	* Left side panel containing all available instructions from the AET features library.
-![alt text](https://github.com/wojdaa/suite-generator/tree/master/assets/left-side-panel.png "left-side-panel")
+![alt text](/assets/left-side-panel.png "left-side-panel")
 	* Main section with current test where the instructions will be drag & dropped.
-![alt text](https://github.com/wojdaa/suite-generator/tree/master/assets/main-section.png "main-section")
-	* Right side panel where the list of created test cases for the test suite are listed. Also, it holds the buttons to Load Suite, Download Suite and Run Suite.
-![alt text](https://github.com/wojdaa/suite-generator/tree/master/assets/right-side-panel.png "right-side-panel")
+![alt text](/assets/main-section.png "main-section")
+	* Right side panel where the list of created test cases for the test suite are listed. 
+	Also, it holds the buttons to Load Suite, Download Suite and Run Suite.	
+![alt text](/assets/right-side-panel.png "right-side-panel")
+
 5. Explanation of the main section structure:
 	* ####Collect
 	This tag contains list of collectors and modifiers which will be run. It specifies what pages' data should be collected and it allows for some data modification before collection step. All collect steps are processed in defined order.
@@ -79,7 +81,7 @@ All instructions can be dragged & dropped from the left-side panel to the main s
 
 During dragging the components, generator will mark the places those instructions can be placed.
 After it’s dropped we can: open wiki page with description of the component, edit its parameters or delete it:
-![alt text](https://github.com/wojdaa/suite-generator/tree/master/assets/options.png "options")
+![alt text](/assets/options.png "options")
 
 Let’s create a simple test as a presentation of the tool features.
 
@@ -97,7 +99,7 @@ We can either close the overlay or show the report - let’s use the latter - yo
 #####IMPORTANT: _AdBlock needs to be disabled in order to display the report._
 
 9. After the Run Suite link is clicked - AET report will open:
-![alt text](https://github.com/wojdaa/suite-generator/tree/master/assets/AET_raport.png "AET_raport")
+![alt text](/assets/AET_raport.png "AET_raport")
 
 ### Exemplary test.
 
