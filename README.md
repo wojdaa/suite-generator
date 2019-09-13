@@ -58,22 +58,22 @@ Please read the short description on how to use the basic features of the genera
 ![alt text](/assets/left-side-panel.png "left-side-panel")
 	* Main section with current test where the instructions will be drag & dropped.
 ![alt text](/assets/main-section.png "main-section")
-	* Right side panel where the list of created test cases for the test suite are listed. 
-	Also, it holds the buttons to Load Suite, Download Suite and Run Suite.	
+	* Right side panel where the list of created test cases for the test suite are listed. Also, it holds the buttons to Load Suite, Download Suite and Run Suite.
+	
 ![alt text](/assets/right-side-panel.png "right-side-panel")
 
 5. Explanation of the main section structure:
-	* ####Collect
+	* *Collect*
 	This tag contains list of collectors and modifiers which will be run. It specifies what pages' data should be collected and it allows for some data modification before collection step. All collect steps are processed in defined order.
 	Following elements are available in collect element:
 		* [Open]
 		* [Collectors]
 		* [Modifiers]
 		
-	* ####Compare
+	* *Compare*
 	This tag contains list of Comparators. Screen comparator takes collected screenshot of the page or just part of it and runs it against comparator. 
 	
-	* ####URLs
+	* *URLs*
 	<urls> element lists all urls which will be processed within the current test. It contains one or more [url] elements.
 	
 ### How to create a working test.
