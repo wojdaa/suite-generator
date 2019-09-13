@@ -1,4 +1,4 @@
-![Cognifide logo](http://cognifide.github.io/assets/cognifide-logo.png)
+![Cognifide logo](http://cognifide.github.io/images/cognifide-logo.png)
 
 # AET
 <p align="center">
@@ -58,22 +58,22 @@ Please read the short description on how to use the basic features of the genera
 ![alt text](/assets/left-side-panel.png "left-side-panel")
 	* Main section with current test where the instructions will be drag & dropped.
 ![alt text](/assets/main-section.png "main-section")
-	* Right side panel where the list of created test cases for the test suite are listed. 
-	Also, it holds the buttons to Load Suite, Download Suite and Run Suite.	
+	* Right side panel where the list of created test cases for the test suite are listed. Also, it holds the buttons to Load Suite, Download Suite and Run Suite.
+	
 ![alt text](/assets/right-side-panel.png "right-side-panel")
 
 5. Explanation of the main section structure:
-	* ####Collect
+	* *Collect*
 	This tag contains list of collectors and modifiers which will be run. It specifies what pages' data should be collected and it allows for some data modification before collection step. All collect steps are processed in defined order.
 	Following elements are available in collect element:
 		* [Open]
 		* [Collectors]
 		* [Modifiers]
 		
-	* ####Compare
+	* *Compare*
 	This tag contains list of Comparators. Screen comparator takes collected screenshot of the page or just part of it and runs it against comparator. 
 	
-	* ####URLs
+	* *URLs*
 	<urls> element lists all urls which will be processed within the current test. It contains one or more [url] elements.
 	
 ### How to create a working test.
@@ -93,10 +93,10 @@ Let’s create a simple test as a presentation of the tool features.
 6. Next step is to add *Screen* comparator - type should be set to layout. We can also set thresholds: pixel or percentage type - this will tell the runner how many differences (in pixels or in screen percentage) are acceptable.
 7. Last thing to add here is the *URL* - we can add here the path to the tested page.
 8. Now the only thing left to do is to hit *Run Suite* button - overlay with progress and further options will appear: 
-![alt text](https://github.com/wojdaa/suite-generator/tree/master/assets/overlay.png "overlay")
+![alt text](/assets/overlay.png "overlay")
 We can either close the overlay or show the report - let’s use the latter - you will be redirected to AET report.
 
-#####IMPORTANT: _AdBlock needs to be disabled in order to display the report._
+*IMPORTANT*: _AdBlock needs to be disabled in order to display the report._
 
 9. After the Run Suite link is clicked - AET report will open:
 ![alt text](/assets/AET_raport.png "AET_raport")
