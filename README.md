@@ -93,10 +93,10 @@ Let’s create a simple test as a presentation of the tool features.
 6. Next step is to add *Screen* comparator - type should be set to layout. We can also set thresholds: pixel or percentage type - this will tell the runner how many differences (in pixels or in screen percentage) are acceptable.
 7. Last thing to add here is the *URL* - we can add here the path to the tested page.
 8. Now the only thing left to do is to hit *Run Suite* button - overlay with progress and further options will appear: 
-![alt text](https://github.com/wojdaa/suite-generator/tree/master/assets/overlay.png "overlay")
+![alt text](/assets/overlay.png "overlay")
 We can either close the overlay or show the report - let’s use the latter - you will be redirected to AET report.
 
-#####IMPORTANT: _AdBlock needs to be disabled in order to display the report._
+*IMPORTANT*: _AdBlock needs to be disabled in order to display the report._
 
 9. After the Run Suite link is clicked - AET report will open:
 ![alt text](/assets/AET_raport.png "AET_raport")
