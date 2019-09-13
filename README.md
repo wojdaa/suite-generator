@@ -10,6 +10,8 @@
 
 Client side application that can be used for generating *suite.xml* files used in AET testing. The app is written using React + Redux.
 
+> **WARNING**: Currently the app doesn't work on Edge/IE and Safari
+
 ### Development environment
 
 To run the app locally you need: 
@@ -25,6 +27,7 @@ To run the app locally you need:
 ### Known bugs
 
 1. URL `name` parameter is being ignored. 
+2. App doesn't work on Edge/IE and Safari due to usage of `File` constructor. Potentially `Blob` can be used as fallback
 
 [node-js]: https://nodejs.org/en/
 [npm-install]: https://docs.npmjs.com/getting-started/installing-node#updating-npm
