@@ -31,7 +31,8 @@ class SuiteActionButton extends Component {
         });
       }
       const xml = suiteElement.end({pretty: true});
-      var file = new File([xml], suiteName, {type: "application/xml;charset=utf-8"});
+      const fileName = this.createValidFileName(suiteName);
+      var file = new File([xml], fileName, {type: "application/xml;charset=utf-8"});
       this.props.handleFile(file);
     } else {
       Object.values(invalidParams).forEach((test, index) => {
@@ -48,6 +49,10 @@ class SuiteActionButton extends Component {
       });
     });
    }
+  }
+
+  createValidFileName(suiteName) {
+    return suiteName.trim().replace(/[^A-Z0-9]/ig, "-").toLocaleLowerCase();
   }
 
   validateParams(suite) {
