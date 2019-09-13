@@ -1,4 +1,4 @@
-![Cognifide logo](http://cognifide.github.io/assets/cognifide-logo.png)
+![Cognifide logo](http://cognifide.github.io/images/cognifide-logo.png)
 
 # AET
 <p align="center">
